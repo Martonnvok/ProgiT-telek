@@ -4,7 +4,9 @@ import java.io.PrintStream;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class tetelek {
+
     public static PrintStream out = new PrintStream(System.out, true, UTF_8);
+
     public static void main(String[] args) {
         indit();
     }
@@ -13,26 +15,37 @@ public class tetelek {
         //tömbök
         int maxmin[] = {-1, 2, 3, 4, 5, 6, 7, 8, -9, 0};
         int osszead[] = {1, 2, 3, 100};
-
-        ugorKiir("___A tömbböl való számok keresése___");
+        elvalasztoVonal();
+        ugorKiir("/___A tömbböl való számok keresése___/");
         //kiválaszt
+        ugorKiir(" ");
         ugorKiir("Tétel: Maximum kiválasztás: ");
         maximum(maxmin);
+        ugorKiir(" ");
         ugorKiir("Tétel: Minimum kiválasztás: ");
         minimum(maxmin);
+        ugorKiir(" ");
         ugorKiir("Tétel: Eldöntés: ");
         eldontes(maxmin, -1);
+        ugorKiir(" ");
         ugorKiir("Tétel: Kiválasztás: ");
         kivalasztas(maxmin, 6);
+        ugorKiir(" ");
         ugorKiir("Tétel: Keresés: ");
         kereses(maxmin, -10);
+        elvalasztoVonal();
         ugorKiir(" ");
-        ugorKiir("___A tömbböl való számok megszámolása/kiszámolása___");
+        elvalasztoVonal();
+
         //osszead,megszámól
+        ugorKiir("/___A tömbböl való számok megszámolása/kiszámolása___/");
+        ugorKiir(" ");
         ugorKiir("Tétel: Összegzés: ");
         osszegzes(osszead);
+        ugorKiir(" ");
         ugorKiir("Tétel: Megszámlálás: ");
         megszamlalas(osszead);
+        elvalasztoVonal();
     }
 
     private static void maximum(int szamok[]) {
@@ -42,7 +55,7 @@ public class tetelek {
                 max = szamok[i];
             }
         }
-        sorKiir("Legnagyobb szám a tömbben: " + max + ". ");
+        sorKiir("\tLegnagyobb szám a tömbben: " + max + ". ");
         ugorKiir(" ");
     }
 
@@ -53,7 +66,7 @@ public class tetelek {
                 min = szamok[i];
             }
         }
-        sorKiir("Legkisebb szám a tömbben: " + min + ". ");
+        sorKiir("\tLegkisebb szám a tömbben: " + min + ". ");
         ugorKiir(" ");
     }
 
@@ -62,7 +75,7 @@ public class tetelek {
         for (int i = 0; i < szamok.length; i++) {
             osszeg = osszeg + szamok[i];
         }
-        sorKiir("A számok összege: " + osszeg + ". ");
+        sorKiir("\tA számok összege: " + osszeg + ". ");
         ugorKiir(" ");
     }
 
@@ -74,7 +87,7 @@ public class tetelek {
                 db++;
             }
         }
-        sorKiir("Összesen ennyi szám van: " + db + ". ");
+        sorKiir("\tÖsszesen ennyi szám van: " + db + ". ");
         ugorKiir(" ");
     }
 
@@ -85,7 +98,7 @@ public class tetelek {
                 van = true;
             }
         }
-        sorKiir("Van-e " + ker + " a tömbben: " + van + ". ");
+        sorKiir("\tVan-e " + ker + " a tömbben: " + van + ". ");
         ugorKiir(" ");
     }
 
@@ -94,7 +107,7 @@ public class tetelek {
         while (szamok[i] != ker) {
             i++;
         }
-        sorKiir("A(z) " + ker + " szám indexe: " + i + ".");
+        sorKiir("\tA(z) " + ker + " szám indexe: " + i + ".");
         ugorKiir(" ");
     }
 
@@ -105,20 +118,29 @@ public class tetelek {
         }
 
         if (i < szamok.length) {
-            System.out.printf("Indexe: " + i + ".");
+            System.out.printf("\tIndexe: " + i + ".");
             ugorKiir(" ");
         } else {
-            sorKiir("Nincs benne.");
+            sorKiir("\tNincs benne.");
             ugorKiir(" ");
         }
     }
 
     private static void sorKiir(String str) {
-        
+
         out.printf(str);
     }
 
     private static void ugorKiir(String str) {
         out.println(str);
+    }
+
+    private static void elvalasztoVonal() {
+
+        for (int i = 0; i < 19; i++) {
+            sorKiir("===");
+        }
+        ugorKiir(" ");
+
     }
 }

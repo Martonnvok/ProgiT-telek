@@ -5,11 +5,12 @@ public class tetelek {
     public static void main(String[] args) {
         //tömbök
         int maxmin[] = {-1, 2, 3, 4, 5, 6, 7, 8, -9, 0};
-        int osszead[] = {1, 2, 3,100};
+        int osszead[] = {1, 2, 3, 100};
 
         //kiválaszt
         maximum(maxmin);
         minimum(maxmin);
+        eldontes(maxmin,-1);
 
         //osszead,megszámól
         osszegzes(osszead);
@@ -55,7 +56,18 @@ public class tetelek {
                 db++;
             }
         }
-        System.out.printf("Összesen ennyi szám van: " + db + " ");
+        System.out.printf("Összesen ennyi szám van: " + db + ". ");
+        System.out.println(" ");
+    }
+
+    public static void eldontes(int szamok[], int ker) {
+        boolean van = false;
+        for (int i = 0; i < szamok.length; i++) {
+            if (szamok[i] == ker) {
+                van = true;
+            }
+        }
+        System.out.printf("Van-e "+ker+" a tömbben: " + van + ". ");
         System.out.println(" ");
     }
 

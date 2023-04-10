@@ -3,6 +3,10 @@ package progitetelek;
 public class tetelek {
 
     public static void main(String[] args) {
+        indit();
+    }
+
+    public static void indit() {
         //tömbök
         int maxmin[] = {-1, 2, 3, 4, 5, 6, 7, 8, -9, 0};
         int osszead[] = {1, 2, 3, 100};
@@ -17,7 +21,7 @@ public class tetelek {
         megszamlalas(osszead);
     }
 
-    public static void maximum(int szamok[]) {
+    private static void maximum(int szamok[]) {
         int max = 0;
         for (int i = 0; i < szamok.length; i++) {
             if (szamok[i] > max) {
@@ -28,7 +32,7 @@ public class tetelek {
         System.out.println(" ");
     }
 
-    public static void minimum(int szamok[]) {
+    private static void minimum(int szamok[]) {
         int min = 0;
         for (int i = 0; i < szamok.length; i++) {
             if (szamok[i] < min) {
@@ -39,7 +43,7 @@ public class tetelek {
         System.out.println(" ");
     }
 
-    public static void osszegzes(int szamok[]) {
+    private static void osszegzes(int szamok[]) {
         int osszeg = 0;
         for (int i = 0; i < szamok.length; i++) {
             osszeg = osszeg + szamok[i];
@@ -48,7 +52,7 @@ public class tetelek {
         System.out.println(" ");
     }
 
-    public static void megszamlalas(int szamok[]) {
+    private static void megszamlalas(int szamok[]) {
         int db = 1;
 
         for (int i = 0; i < szamok.length; i++) {
@@ -60,7 +64,7 @@ public class tetelek {
         System.out.println(" ");
     }
 
-    public static void eldontes(int szamok[], int ker) {
+    private static void eldontes(int szamok[], int ker) {
         boolean van = false;
         for (int i = 0; i < szamok.length; i++) {
             if (szamok[i] == ker) {

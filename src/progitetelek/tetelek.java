@@ -11,14 +11,24 @@ public class tetelek {
         int maxmin[] = {-1, 2, 3, 4, 5, 6, 7, 8, -9, 0};
         int osszead[] = {1, 2, 3, 100};
 
+        System.out.println("___A tömbböl való számok keresése___");
         //kiválaszt
+        System.out.println("Tétel: Maximum kiválasztás: ");
         maximum(maxmin);
+        System.out.println("Tétel: Minimum kiválasztás: ");
         minimum(maxmin);
+        System.out.println("Tétel: Eldöntés: ");
         eldontes(maxmin, -1);
+        System.out.println("Tétel: Kiválasztás: ");
         kivalasztas(maxmin, 6);
-
+        System.out.println("Tétel: Keresés: ");
+        kereses(maxmin, -10);
+        System.out.println(" ");
+        System.out.println("___A tömbböl való számok megszámolása/kiszámolása___");
         //osszead,megszámól
+        System.out.println("Tétel: Összegzés: ");
         osszegzes(osszead);
+        System.out.println("Tétel: Megszámlálás: ");
         megszamlalas(osszead);
     }
 
@@ -83,6 +93,21 @@ public class tetelek {
         }
         System.out.printf("A(z) " + ker + " szám indexe: " + i + ".");
         System.out.println(" ");
+    }
+
+    private static void kereses(int szamok[], int ker) {
+        int i = 0;
+        while (i < szamok.length && szamok[i] != ker) {
+            i++;
+        }
+
+        if (i < szamok.length) {
+            System.out.printf("Indexe: " + i + ".");
+            System.out.println(" ");
+        } else {
+            System.out.printf("Nincs benne.");
+            System.out.println(" ");
+        }
     }
 
 }

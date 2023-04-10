@@ -14,7 +14,8 @@ public class tetelek {
         //kiválaszt
         maximum(maxmin);
         minimum(maxmin);
-        eldontes(maxmin,-1);
+        eldontes(maxmin, -1);
+        kivalasztas(maxmin, 6);
 
         //osszead,megszámól
         osszegzes(osszead);
@@ -71,7 +72,16 @@ public class tetelek {
                 van = true;
             }
         }
-        System.out.printf("Van-e "+ker+" a tömbben: " + van + ". ");
+        System.out.printf("Van-e " + ker + " a tömbben: " + van + ". ");
+        System.out.println(" ");
+    }
+
+    private static void kivalasztas(int szamok[], int ker) {
+        int i = 0;
+        while (szamok[i] != ker) {
+            i++;
+        }
+        System.out.printf("A(z) " + ker + " szám indexe: " + i + ".");
         System.out.println(" ");
     }
 

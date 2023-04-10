@@ -6,7 +6,8 @@ public class Progitetelek {
 
     
     public static void main(String[] args) {
-       
     }
+
+    
     
 }

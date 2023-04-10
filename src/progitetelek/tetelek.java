@@ -11,24 +11,24 @@ public class tetelek {
         int maxmin[] = {-1, 2, 3, 4, 5, 6, 7, 8, -9, 0};
         int osszead[] = {1, 2, 3, 100};
 
-        System.out.println("___A tömbböl való számok keresése___");
+        ugorKiir("___A tömbböl való számok keresése___");
         //kiválaszt
-        System.out.println("Tétel: Maximum kiválasztás: ");
+        ugorKiir("Tétel: Maximum kiválasztás: ");
         maximum(maxmin);
-        System.out.println("Tétel: Minimum kiválasztás: ");
+        ugorKiir("Tétel: Minimum kiválasztás: ");
         minimum(maxmin);
-        System.out.println("Tétel: Eldöntés: ");
+        ugorKiir("Tétel: Eldöntés: ");
         eldontes(maxmin, -1);
-        System.out.println("Tétel: Kiválasztás: ");
+        ugorKiir("Tétel: Kiválasztás: ");
         kivalasztas(maxmin, 6);
-        System.out.println("Tétel: Keresés: ");
+        ugorKiir("Tétel: Keresés: ");
         kereses(maxmin, -10);
-        System.out.println(" ");
-        System.out.println("___A tömbböl való számok megszámolása/kiszámolása___");
+        ugorKiir(" ");
+        ugorKiir("___A tömbböl való számok megszámolása/kiszámolása___");
         //osszead,megszámól
-        System.out.println("Tétel: Összegzés: ");
+        ugorKiir("Tétel: Összegzés: ");
         osszegzes(osszead);
-        System.out.println("Tétel: Megszámlálás: ");
+        ugorKiir("Tétel: Megszámlálás: ");
         megszamlalas(osszead);
     }
 
@@ -39,8 +39,8 @@ public class tetelek {
                 max = szamok[i];
             }
         }
-        System.out.printf("Legnagyobb szám a tömbben: " + max + ". ");
-        System.out.println(" ");
+        sorKiir("Legnagyobb szám a tömbben: " + max + ". ");
+        ugorKiir(" ");
     }
 
     private static void minimum(int szamok[]) {
@@ -50,8 +50,8 @@ public class tetelek {
                 min = szamok[i];
             }
         }
-        System.out.printf("Legkisebb szám a tömbben: " + min + ". ");
-        System.out.println(" ");
+        sorKiir("Legkisebb szám a tömbben: " + min + ". ");
+        ugorKiir(" ");
     }
 
     private static void osszegzes(int szamok[]) {
@@ -59,8 +59,8 @@ public class tetelek {
         for (int i = 0; i < szamok.length; i++) {
             osszeg = osszeg + szamok[i];
         }
-        System.out.printf("A számok összege: " + osszeg + ". ");
-        System.out.println(" ");
+        sorKiir("A számok összege: " + osszeg + ". ");
+        ugorKiir(" ");
     }
 
     private static void megszamlalas(int szamok[]) {
@@ -71,8 +71,8 @@ public class tetelek {
                 db++;
             }
         }
-        System.out.printf("Összesen ennyi szám van: " + db + ". ");
-        System.out.println(" ");
+        sorKiir("Összesen ennyi szám van: " + db + ". ");
+        ugorKiir(" ");
     }
 
     private static void eldontes(int szamok[], int ker) {
@@ -82,8 +82,8 @@ public class tetelek {
                 van = true;
             }
         }
-        System.out.printf("Van-e " + ker + " a tömbben: " + van + ". ");
-        System.out.println(" ");
+        sorKiir("Van-e " + ker + " a tömbben: " + van + ". ");
+        ugorKiir(" ");
     }
 
     private static void kivalasztas(int szamok[], int ker) {
@@ -91,8 +91,8 @@ public class tetelek {
         while (szamok[i] != ker) {
             i++;
         }
-        System.out.printf("A(z) " + ker + " szám indexe: " + i + ".");
-        System.out.println(" ");
+        sorKiir("A(z) " + ker + " szám indexe: " + i + ".");
+        ugorKiir(" ");
     }
 
     private static void kereses(int szamok[], int ker) {
@@ -103,11 +103,18 @@ public class tetelek {
 
         if (i < szamok.length) {
             System.out.printf("Indexe: " + i + ".");
-            System.out.println(" ");
+            ugorKiir(" ");
         } else {
-            System.out.printf("Nincs benne.");
-            System.out.println(" ");
+            sorKiir("Nincs benne.");
+            ugorKiir(" ");
         }
     }
 
+    private static void sorKiir(String str) {
+        System.out.printf(str);
+    }
+
+    private static void ugorKiir(String str) {
+        System.out.println(str);
+    }
 }

@@ -1,7 +1,10 @@
 package progitetelek;
 
-public class tetelek {
+import java.io.PrintStream;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
+public class tetelek {
+    public static PrintStream out = new PrintStream(System.out, true, UTF_8);
     public static void main(String[] args) {
         indit();
     }
@@ -111,10 +114,11 @@ public class tetelek {
     }
 
     private static void sorKiir(String str) {
-        System.out.printf(str);
+        
+        out.printf(str);
     }
 
     private static void ugorKiir(String str) {
-        System.out.println(str);
+        out.println(str);
     }
 }

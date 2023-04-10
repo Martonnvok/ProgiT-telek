@@ -5,14 +5,15 @@ public class tetelek {
     public static void main(String[] args) {
         //tömbök
         int maxmin[] = {-1, 2, 3, 4, 5, 6, 7, 8, -9, 0};
-        int osszead[]={1,2,3};
-        
+        int osszead[] = {1, 2, 3,100};
+
         //kiválaszt
         maximum(maxmin);
         minimum(maxmin);
-        
+
         //osszead,megszámól
         osszegzes(osszead);
+        megszamlalas(osszead);
     }
 
     public static void maximum(int szamok[]) {
@@ -47,13 +48,14 @@ public class tetelek {
     }
 
     public static void megszamlalas(int szamok[]) {
-        int min = 0;
+        int db = 1;
+
         for (int i = 0; i < szamok.length; i++) {
-            if (szamok[i] < min) {
-                min = szamok[i];
+            if (szamok[i] < 5) {
+                db++;
             }
         }
-        System.out.printf("Legkisebb szám a tömbben: " + min + " ");
+        System.out.printf("Összesen ennyi szám van: " + db + " ");
         System.out.println(" ");
     }
 
